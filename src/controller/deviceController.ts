@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import deviceStatusService from "../services/devicesStatusService";
+import deviceStatusService, { DeviceStatus } from "../services/devicesStatusService";
 
 export class DeviceController {
   // Get all devices
@@ -125,7 +125,7 @@ export class DeviceController {
   ) {
     try {
       const devices = await deviceStatusService.getDevicesByStatus(
-        req.params.status
+        req.params.status as DeviceStatus['status']
       );
       res.status(200).json({
         success: true,

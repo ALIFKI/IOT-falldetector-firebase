@@ -5,7 +5,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/server.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon dist/server.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon dist/server.js\"",
+    "build": "tsc",
+    "pm2:start": "pm2 start dist/server.js --name express-boilerplate",
+    "pm2:stop": "pm2 stop express-boilerplate",
+    "pm2:restart": "pm2 restart express-boilerplate",
+    "pm2:delete": "pm2 delete express-boilerplate",
+    "pm2:logs": "pm2 logs express-boilerplate",
+    "pm2:monit": "pm2 monit"
   },
   "keywords": [],
   "author": "",

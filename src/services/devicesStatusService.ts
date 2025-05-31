@@ -16,7 +16,7 @@ import config from "../config/config";
 const db = getFirestore(config.firebase.app);
 const devicesCollection = "devices";
 
-interface DeviceStatus {
+export interface DeviceStatus {
   id?: string;
   deviceId: string;
   name: string;
