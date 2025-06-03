@@ -226,15 +226,13 @@ export class NotificationController {
         const ticket = await expo.sendPushNotificationsAsync([message]);
 
         // Store notification in database
-        await notificationService.createNotification({
-          userId: req.body.userId,
-          title,
-          body,
-          data,
-          createdAt: new Date(),
-          pushToken: token,
-          status: "sent",
-        });
+        // await notificationService.createNotification({
+        //   userId: req.body.userId,
+        //   title,
+        //   createdAt: new Date(),
+        //   pushToken: token,
+        //   status: "sent",
+        // });
 
         res.status(200).json({
           success: true,

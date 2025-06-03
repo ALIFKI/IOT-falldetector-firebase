@@ -25,6 +25,7 @@ interface NotificationData {
   isRead: boolean;
   createdAt?: Date;
   updatedAt?: Date;
+  status?:string
 }
 
 export class NotificationService {
